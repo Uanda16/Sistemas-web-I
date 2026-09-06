@@ -1,20 +1,15 @@
 <?php
 
-require_once 'Model.php';
+require_once 'Produto.php';
 
-$op1 = new Aluno();
+$op1 = new Produto();
 
-$op1->setNome($_POST['nome']);
-$op1->setNota1($_POST['nota1']);
-$op1->setNota2($_POST['nota2']);
-$op1->setNota3($_POST['nota3']);
-$op1->setFaltas($_POST['faltas']);
+$op1-> setProd($_POST['prod']);
+$op1-> setprecoUni($_POST['precoUni']);
+$op1-> setqtnd($_POST['qtnd']);
+$op1-> setdesc($_POST['desc']);
+$op1-> setEstoque($_POST['estoque']);
 
-echo "<h3>Desempenho do Aluno: " . $op1->getNome() . "</h3>";
-echo "<p>Média: " . number_format($op1->calcularMedia(), 1) . "</p>";
-echo "<p>Presença: " . number_format($op1->calcularPresenca(), 1) . "%</p>";
-echo "<p>Situação: "; 
-$op1->mostrarResultado(); 
-echo "</p>";
+require_once 'resultado.php';
 
 ?>
